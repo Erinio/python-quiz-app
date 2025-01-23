@@ -33,6 +33,7 @@ class QuizApp:
         self.root.title("Python Quiz App")
         self.root.geometry("600x400")  # Set the default window size to 600x400
         self.current_question = None
+        self.score = 0  # Initialize score
 
         # GUI elements
         self.topic_label = tk.Label(root, text="Enter Python Topic:")
@@ -43,6 +44,9 @@ class QuizApp:
 
         self.generate_button = tk.Button(root, text="Generate Python Question", command=self.generate_question)
         self.generate_button.pack()
+
+        self.score_label = tk.Label(root, text="Score: 0", font=("Arial", 14, "bold"))
+        self.score_label.pack(pady=5)
 
         self.question_frame = tk.Frame(root)
         self.question_frame.pack(pady=10)
@@ -100,9 +104,13 @@ class QuizApp:
             return
 
         if selected_option == self.current_question["answer"]:
+            self.score += 1  # Increment score for a correct answer
             self.feedback_label.config(text="Correct! Well done!", fg="green")
         else:
             self.feedback_label.config(text="Incorrect. Try again.", fg="red")
+
+        # Update the score label
+        self.score_label.config(text=f"Score: {self.score}")
 
 # Main program
 if __name__ == "__main__":
