@@ -1,4 +1,4 @@
-# python-quiz-app
+# python-quiz-app - 60097027
 
 This repository contains the Python Quiz App, a Tkinter-based graphical user interface (GUI) application that allows users to test their Python knowledge with predefined questions. The app includes questions from topics such as loops, lists, and strings. It also tracks the user's score.
 
